@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     func checkQuizCapacity() {
-        if questionNumber < quiz.capacity - 1 {
+        if questionNumber < quiz.count - 1 {
             questionNumber += 1
         } else {
             questionNumber = 0
