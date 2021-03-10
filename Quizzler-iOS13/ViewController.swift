@@ -30,21 +30,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        checkQuizCapacity()
+        
         let userAnswer = sender.currentTitle
         let actualAnswer = quiz[questionNumber][1]
-        
         if userAnswer == actualAnswer {
             print("Right!")
         } else {
             print("Wrong :(")
         }
         
-        questionNumber += 1
         updateUI()
     }
     
     func updateUI() {
         questionLabel.text = quiz[questionNumber][0]
+    }
+    
+    func checkQuizCapacity() {
+        if questionNumber < quiz.capacity - 1 {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+        }
+        print(questionNumber)
     }
     
 }
