@@ -57,15 +57,7 @@ struct QuizBrain {
         return score
     }
     
-    func getChoice1Text() -> String {
-        return quiz[questionNumber].answerChices[0]
-    }
-    
-    func getChoice2Text() -> String {
-        return quiz[questionNumber].answerChices[1]
-    }
-    
-    func getChoice3Text() -> String {
-        return quiz[questionNumber].answerChices[2]
+    func getAnswers() -> [String] {
+        return quiz[questionNumber].answerChices
     }
 }
